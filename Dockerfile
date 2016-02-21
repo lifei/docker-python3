@@ -1,4 +1,5 @@
-FROM lifei/baseimage
+FROM phusion/baseimage
+MAINTAINER lifei "lifei.vip@outlook.com"
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	ca-certificates \
 	curl \
