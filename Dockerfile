@@ -1,5 +1,7 @@
 FROM phusion/baseimage
 MAINTAINER lifei "lifei.vip@outlook.com"
+RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/' /etc/apt/sources.list
+RUN sed -i 's/deb-src/# deb-src/' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	ca-certificates \
 	curl \
@@ -93,4 +95,3 @@ RUN cd /usr/local/bin \
 
 CMD ["python", "/sbin/my_init"]
 ENTRYPOINT []
-
